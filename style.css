@@ -1,0 +1,153 @@
+/* ==== GLOBAL ==== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0e0e15;
+  color: #fff;
+  overflow-x:hidden;
+}
+
+/* ==== FLOATING BLOBS ==== */
+.blob {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  filter: blur(180px);
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: float 10s infinite ease-in-out;
+}
+.b1 { top:-100px; left:-100px; background:#6a00ff; }
+.b2 { top:50%; right:-150px; background:#ff0099; animation-delay:2s; }
+.b3 { bottom:-150px; left:40%; background:#00ffaa; animation-delay:4s; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-60px) scale(1.1); }
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+  padding: 20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  z-index:20;
+}
+.logo {
+  font-size:32px;
+  font-weight:900;
+  background:linear-gradient(90deg,#a855f7,#ec4899);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.nav-links {
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+.nav-links a {
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  opacity:0.85;
+}
+.nav-links a:hover { opacity:1; }
+
+/* ==== BUTTON ==== */
+.btn {
+  padding:12px 22px;
+  background:linear-gradient(90deg,#8b5cf6,#ec4899);
+  border-radius:10px;
+  font-weight:600;
+  color:#fff;
+  text-decoration:none;
+  transition:0.2s;
+}
+.btn.big { padding:16px 32px; font-size:18px; }
+.btn:hover { filter:brightness(1.15); transform:translateY(-2px); }
+
+/* ==== HERO ==== */
+.hero {
+  text-align:center;
+  padding:160px 20px 120px;
+  position:relative;
+  z-index:5;
+}
+.hero h1 {
+  font-size:64px;
+  font-weight:900;
+  line-height:1.1;
+}
+.gradient-text {
+  background:linear-gradient(90deg,#8b5cf6,#ec4899,#22c55e);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.sub {
+  margin-top:20px;
+  font-size:18px;
+  opacity:0.8;
+}
+
+/* ==== SECTIONS ==== */
+.section {
+  padding:120px 40px;
+  position:relative;
+  z-index:10;
+}
+.title {
+  text-align:center;
+  font-size:42px;
+  font-weight:800;
+  margin-bottom:40px;
+}
+
+/* ==== CARDS ==== */
+.cards {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.card {
+  width:260px;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  box-shadow:0 8px 30px rgba(0,0,0,0.3);
+  transition:0.2s;
+}
+.card:hover {
+  transform:translateY(-8px);
+  background:rgba(255,255,255,0.12);
+}
+
+/* ==== FEATURES GRID ==== */
+.feature-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:24px;
+  margin-top:50px;
+}
+.feature {
+  padding:30px;
+  background:rgba(255,255,255,0.05);
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.15);
+  transition:0.2s;
+}
+.feature:hover {
+  transform:translateY(-6px);
+  background:rgba(255,255,255,0.1);
+}
+
+/* ==== FOOTER ==== */
+.footer {
+  text-align:center;
+  padding:40px;
+  opacity:0.7;
+  margin-top:80px;
+}
