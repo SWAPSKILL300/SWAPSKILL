@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SWAPSKILL</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">SWAPSKILL</h1>
+        <p class="subtitle">Teach what you know. Learn what you need.</p>
+
+        <div class="card">
+            <h2>Create Your Profile</h2>
+
+            <label>Name:</label>
+            <input id="name" placeholder="Enter your name" />
+
+            <label>Skills you can teach (comma separated):</label>
+            <input id="teach" placeholder="e.g., Python, Guitar" />
+
+            <label>Skills you want to learn:</label>
+            <input id="learn" placeholder="e.g., UI Design, SQL" />
+
+            <button onclick="createProfile()">Save Profile</button>
+        </div>
+
+        <div class="card">
+            <h2>Find Your Skill Match</h2>
+            <button onclick="matchSkills()">Find Match</button>
+
+            <div id="matchResult" class="result"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
