@@ -1,86 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SWAPSKILL — interactive</title>
+  <title>SWAPSKILL • Learn by Teaching</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="brand">SWAPSKILL</div>
-    <div class="top-actions">
+  <!-- Background Animated Blobs -->
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="logo">SWAPSKILL</div>
+    <div class="nav-actions">
       <button id="demoBtn" class="btn ghost">Load Demo</button>
       <button id="clearBtn" class="btn ghost">Clear All</button>
     </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <h1 class="hero-title">Learn Anything. <span class="gradient">Teach Anything.</span></h1>
+    <p class="hero-subtitle">Swap skills with awesome people. Grow together.</p>
   </header>
 
-  <main class="layout">
-    <section class="left">
-      <div class="panel create">
-        <h2>Create / Edit Profile</h2>
-        <div class="form-row">
-          <label>Name</label>
-          <input id="nameInput" placeholder="Your name (e.g., Asha)" />
-        </div>
-        <div class="form-row">
-          <label>Skills you can <strong>teach</strong> (comma separated)</label>
-          <input id="teachInput" placeholder="e.g., Photoshop, Guitar" />
-        </div>
-        <div class="form-row">
-          <label>Skills you want to <strong>learn</strong> (comma separated)</label>
-          <input id="learnInput" placeholder="e.g., React, SQL" />
-        </div>
-        <div class="row">
-          <button id="saveBtn" class="btn primary">Save Profile</button>
-          <button id="updateBtn" class="btn" style="display:none">Update</button>
-        </div>
-        <div class="muted">Profiles are stored in your browser (localStorage).</div>
-      </div>
+  <!-- MAIN LAYOUT -->
+  <main class="main-grid">
 
-      <div class="panel search">
-        <h2>Find Matches</h2>
-        <div class="row">
-          <select id="profileSelect"></select>
-          <button id="findBtn" class="btn primary">Find Matches</button>
-        </div>
-        <div id="matchList" class="cards"></div>
-      </div>
+    <!-- LEFT SIDE (FORMS) -->
+    <section class="panel glass">
+      <h2>Create / Edit Profile</h2>
+
+      <label>Name</label>
+      <input id="nameInput" placeholder="Your name">
+
+      <label>Skills You Can Teach</label>
+      <input id="teachInput" placeholder="e.g., Photoshop, Guitar">
+
+      <label>Skills You Want to Learn</label>
+      <input id="learnInput" placeholder="e.g., React, SQL">
+
+      <button id="saveBtn" class="btn primary full">Save Profile</button>
+      <button id="updateBtn" class="btn full" style="display:none">Update Profile</button>
+
+      <p class="tiny muted">Profiles are saved locally on your device.</p>
+
+      <hr class="divider">
+
+      <h2>Find Matches</h2>
+      <select id="profileSelect"></select>
+      <button id="findBtn" class="btn primary full">Find Matches</button>
+
+      <div id="matchList" class="cards"></div>
     </section>
 
-    <aside class="right">
-      <div class="panel people">
-        <h3>People</h3>
-        <div id="profilesContainer" class="cards"></div>
-      </div>
+    <!-- RIGHT SIDE (PEOPLE + DETAILS) -->
+    <section class="panel glass">
+      <h2>People</h2>
+      <div id="profilesContainer" class="cards"></div>
 
-      <div class="panel details">
-        <h3>Your Selected Profile</h3>
-        <div id="selectedCard" class="profile-empty">No profile selected</div>
-        <div class="row mt-8">
-          <button id="exportBtn" class="btn ghost">Export JSON</button>
-          <button id="importBtn" class="btn ghost">Import JSON</button>
-        </div>
+      <h2>Your Selected Profile</h2>
+      <div id="selectedCard" class="profile-empty">Nothing selected</div>
+
+      <div class="row2">
+        <button id="exportBtn" class="btn ghost">Export JSON</button>
+        <button id="importBtn" class="btn ghost">Import JSON</button>
       </div>
-    </aside>
+    </section>
   </main>
 
-  <!-- modal for import -->
+  <!-- IMPORT MODAL -->
   <div id="importModal" class="modal hidden">
-    <div class="modal-card">
-      <h4>Import profiles (paste JSON)</h4>
-      <textarea id="importTextarea" rows="8" placeholder='[{"name":"X","teach":["..."],"learn":["..."]}]'></textarea>
-      <div class="row">
+    <div class="modal-card glass">
+      <h3>Import Profiles</h3>
+      <textarea id="importTextarea" rows="6" placeholder="Paste JSON here"></textarea>
+      <div class="row2">
         <button id="doImport" class="btn primary">Import</button>
         <button id="closeImport" class="btn">Close</button>
       </div>
     </div>
   </div>
-
-  <footer class="footer">
-    <div>SWAPSKILL • Interactive demo • Local-only (no server)</div>
-    <div class="small">Tip: click “Load Demo” to populate sample users.</div>
-  </footer>
 
   <script src="app.js"></script>
 </body>
